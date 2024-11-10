@@ -19,7 +19,7 @@
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
-            transition: transform 0.3s ease; /* Adds a slight effect when image changes */
+            transition: transform 0.3s ease;
         }
         h1 {
             font-size: 1.5em;
@@ -45,7 +45,7 @@
     </style>
 </head>
 <body>
-    <img id="bearsImage" src="neutral-bears.jpg" alt="Two bears neutral">
+    <img id="bearsImage" src="https://raw.githubusercontent.com/yourusername/yourrepo/main/images/neutral-bears.jpg" alt="Two bears neutral">
     <h1>Don't you think our friendship needs a second chance?</h1>
     <div class="buttons">
         <button class="yes" onclick="showHug()">Yes</button>
@@ -54,12 +54,18 @@
 
     <script>
         function showHug() {
-            document.getElementById('bearsImage').src = 'hugging-bears.jpg';
+            document.getElementById('bearsImage').src = 'https://raw.githubusercontent.com/yourusername/yourrepo/main/images/hugging-bears.jpg';
             alert("Yay! Let’s work things out 😊");
         }
 
         function showSad() {
-            document.getElementById('bearsImage').src = 'sad-bears.jpg';
+            document.getElementById('bearsImage').src = 'https://raw.githubusercontent.com/yourusername/yourrepo/main/images/sad-bears.jpg';
+            alert("I understand. Take your time.");
+        }
+    </script>
+</body>
+</html>
+
             alert("I understand. Take your time.");
         }
     </script>
