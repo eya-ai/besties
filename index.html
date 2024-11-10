@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let's Reconnect</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fdf5e6;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease; /* Adds a slight effect when image changes */
+        }
+        h1 {
+            font-size: 1.5em;
+            color: #333;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button.yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+        button.no {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img id="bearsImage" src="neutral-bears.jpg" alt="Two bears neutral">
+    <h1>Don't you think our friendship needs a second chance?</h1>
+    <div class="buttons">
+        <button class="yes" onclick="showHug()">Yes</button>
+        <button class="no" onclick="showSad()">No</button>
+    </div>
+
+    <script>
+        function showHug() {
+            document.getElementById('bearsImage').src = 'hugging-bears.jpg';
+            alert("Yay! Let’s work things out 😊");
+        }
+
+        function showSad() {
+            document.getElementById('bearsImage').src = 'sad-bears.jpg';
+            alert("I understand. Take your time.");
+        }
+    </script>
+</body>
+</html>
