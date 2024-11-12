@@ -65,12 +65,16 @@
     <audio id="reconnectSong" src="audio/song.mp3"></audio>
 
     <script>
+        // Get references to the audio and message elements
         const song = document.getElementById("reconnectSong");
         const loveMessage = document.getElementById("loveMessage");
 
         function showHug() {
+            // Show the hugging bears image
             document.getElementById('bearsImage').src = 'images/hugging-bears.jpg';
-            loveMessage.style.display = "block"; // Show the love message
+            
+            // Show the "I LOVE YOU SISTER" message
+            loveMessage.style.display = "block";
 
             // Restart and play the song
             song.currentTime = 0;
@@ -78,11 +82,15 @@
         }
 
         function showSad() {
+            // Show the sad bears image
             document.getElementById('bearsImage').src = 'images/sad-bears.jpg';
-            loveMessage.style.display = "none"; // Hide the love message
+
+            // Hide the "I LOVE YOU SISTER" message
+            loveMessage.style.display = "none";
 
             // Stop the song
             song.pause();
+            song.currentTime = 0;  // Reset the song to the beginning
         }
     </script>
 </body>
