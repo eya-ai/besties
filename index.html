@@ -21,7 +21,7 @@
             margin-bottom: 20px;
             transition: transform 0.3s ease;
         }
-        h1 {
+        h1, h2 {
             font-size: 1.5em;
             color: #333;
         }
@@ -42,6 +42,12 @@
             background-color: #f44336;
             color: white;
         }
+        #loveMessage {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #e91e63;
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -52,18 +58,31 @@
         <button class="no" onclick="showSad()">No</button>
     </div>
 
-    <h2>Friendship Responses</h2>
-    <p>See the responses <a href="YOUR_GOOGLE_SHEET_LINK" target="_blank">here</a>.</p>
+    <!-- Hidden message -->
+    <h2 id="loveMessage">I LOVE YOU SISTER</h2>
+
+    <!-- Audio element for the song -->
+    <audio id="reconnectSong" src="audio/song.mp3"></audio>
 
     <script>
+        const song = document.getElementById("reconnectSong");
+        const loveMessage = document.getElementById("loveMessage");
+
         function showHug() {
             document.getElementById('bearsImage').src = 'images/hugging-bears.jpg';
-            alert("Yay! Let’s work things out 😊");
+            loveMessage.style.display = "block"; // Show the love message
+
+            // Restart and play the song
+            song.currentTime = 0;
+            song.play();
         }
 
         function showSad() {
             document.getElementById('bearsImage').src = 'images/sad-bears.jpg';
-            alert("I understand. Take your time.");
+            loveMessage.style.display = "none"; // Hide the love message
+
+            // Stop the song
+            song.pause();
         }
     </script>
 </body>
