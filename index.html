@@ -76,9 +76,12 @@
             // Show the "I LOVE YOU SISTER" message
             loveMessage.style.display = "block";
 
-            // Restart and play the song from the beginning
+            // Restart the song from the beginning and play it
             song.currentTime = 0;
-            song.play();
+            song.play().catch(error => {
+                console.error("Audio playback failed:", error);
+                alert("Audio playback failed. Please make sure audio is enabled.");
+            });
         }
 
         function showSad() {
@@ -88,9 +91,9 @@
             // Hide the "I LOVE YOU SISTER" message
             loveMessage.style.display = "none";
 
-            // Stop the song
+            // Stop the song and reset it to the beginning
             song.pause();
-            song.currentTime = 0;  // Reset the song to the beginning
+            song.currentTime = 0;
         }
     </script>
 </body>
