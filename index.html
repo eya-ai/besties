@@ -19,17 +19,10 @@
             max-width: 100%;
             height: auto;
             margin-bottom: 20px;
-            transition: transform 0.3s ease;
         }
         h1 {
             font-size: 1.5em;
             color: #333;
-        }
-        #loveMessage {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #e91e63;
-            display: none;
         }
         .buttons {
             margin-top: 20px;
@@ -57,39 +50,19 @@
         <button class="yes" onclick="showHug()">Yes</button>
         <button class="no" onclick="showSad()">No</button>
     </div>
-    
-    <!-- Hidden message -->
-    <h2 id="loveMessage">I LOVE YOU SISTER</h2>
 
-    <!-- Audio element for the song -->
-    <audio id="reconnectSong" src="audio/song.mp3"></audio>
+    <!-- Audio element for the song, set to autoplay -->
+    <audio id="reconnectSong" src="audio/song.mp3" autoplay></audio>
 
     <script>
-        // Get references to the song and love message
-        const song = document.getElementById('reconnectSong');
-        const loveMessage = document.getElementById('loveMessage');
-
         function showHug() {
-            // Change image to hugging bears
             document.getElementById('bearsImage').src = 'images/hugging-bears.jpg';
-
-            // Show the love message
-            loveMessage.style.display = "block";
-
-            // Restart and play the song from the beginning
-            song.currentTime = 0;
-            song.play();
+            alert("Yay! Let’s work things out 😊");
         }
 
         function showSad() {
-            // Change image to sad bears
             document.getElementById('bearsImage').src = 'images/sad-bears.jpg';
-
-            // Hide the love message
-            loveMessage.style.display = "none";
-
-            // Stop the song
-            song.pause();
+            alert("I understand. Take your time.");
         }
     </script>
 </body>
