@@ -21,9 +21,15 @@
             margin-bottom: 20px;
             transition: transform 0.3s ease;
         }
-        h1, h2 {
+        h1 {
             font-size: 1.5em;
             color: #333;
+        }
+        #loveMessage {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #e91e63;
+            display: none;
         }
         .buttons {
             margin-top: 20px;
@@ -42,12 +48,6 @@
             background-color: #f44336;
             color: white;
         }
-        #loveMessage {
-            margin-top: 20px;
-            font-size: 1.5em;
-            color: #e91e63;
-            display: none;
-        }
     </style>
 </head>
 <body>
@@ -57,43 +57,28 @@
         <button class="yes" onclick="showHug()">Yes</button>
         <button class="no" onclick="showSad()">No</button>
     </div>
-
+    
     <!-- Hidden message -->
     <h2 id="loveMessage">I LOVE YOU SISTER</h2>
-
+    
     <!-- Audio element for the song -->
     <audio id="reconnectSong" src="audio/song.mp3"></audio>
-
+    
     <script>
-        // Get references to the audio and message elements
         const song = document.getElementById("reconnectSong");
         const loveMessage = document.getElementById("loveMessage");
 
         function showHug() {
-            // Show the hugging bears image
             document.getElementById('bearsImage').src = 'images/hugging-bears.jpg';
-            
-            // Show the "I LOVE YOU SISTER" message
-            loveMessage.style.display = "block";
-
-            // Restart the song from the beginning and play it
-            song.currentTime = 0;
-            song.play().catch(error => {
-                console.error("Audio playback failed:", error);
-                alert("Audio playback failed. Please make sure audio is enabled.");
-            });
+            loveMessage.style.display = "block"; // Show the love message
+            song.currentTime = 0; // Restart the song
+            song.play(); // Play the song
         }
 
         function showSad() {
-            // Show the sad bears image
             document.getElementById('bearsImage').src = 'images/sad-bears.jpg';
-
-            // Hide the "I LOVE YOU SISTER" message
-            loveMessage.style.display = "none";
-
-            // Stop the song and reset it to the beginning
-            song.pause();
-            song.currentTime = 0;
+            loveMessage.style.display = "none"; // Hide the love message
+            song.pause(); // Stop the song
         }
     </script>
 </body>
